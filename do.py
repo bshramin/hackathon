@@ -24,6 +24,10 @@ while True:
             image,
             width=min(400, image.shape[1])
         )
+        image = imutils.rotate(
+            image,
+            180
+        )
 
         # Detecting all the regions
         # in the Image that has a
@@ -60,6 +64,7 @@ while True:
             print(round(sum(number_of_regions)/len(number_of_regions)))
             number_of_regions = []
             start_time = time.time()
+            time.sleep(0.5)
         
     else:
         break
